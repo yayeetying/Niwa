@@ -35,7 +35,7 @@ current_line_index = 0
 # Load dialogues for each scene
 with open('dialogues/lake.txt', 'r', encoding='utf-8') as file:
     LAKE_DIALOGUE = file.read().splitlines()
-with open('dialogues/lake.txt', 'r', encoding='utf-8') as file:
+with open('dialogues/noh.txt', 'r', encoding='utf-8') as file:
     NOH_DIALOGUE = file.read().splitlines()
 with open('dialogues/monastery.txt', 'r', encoding='utf-8') as file:
     MONASTERY_DIALOGUE = file.read().splitlines()
@@ -124,7 +124,7 @@ while running:
             current_background.action_trigger = True
         elif background == '2':
             current_background = NOH
-            player.manual_change_pos(1050, 1175)
+            player.manual_change_pos(1050, 1150)
             current_other_sprite = zeami_img
             current_other_sprite_cords = (100, 450)
             pygame.mixer.music.fadeout(200)
@@ -154,6 +154,8 @@ while running:
                 player.manual_change_pos(1100, 180)
             elif current_background == MONASTERY:
                 player.manual_change_pos(1925, 550)
+            elif current_background == NOH:
+                player.manual_change_pos(465, 550)
             current_background = TOWN
             current_other_sprite = terako_img
             current_other_sprite_cords = (100, 375)
